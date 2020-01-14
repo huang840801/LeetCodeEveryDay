@@ -1,5 +1,7 @@
 package com.guanhong.leetcodeeveryday
 
+import android.util.Log
+
 class LeetCode {
 
     /**
@@ -493,7 +495,34 @@ class LeetCode {
 
         val wordList = mutableListOf<String>()
 
-        val characterList = listOf('a', 'b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z')
+        val characterList = listOf(
+            'a',
+            'b',
+            'c',
+            'd',
+            'e',
+            'f',
+            'g',
+            'h',
+            'i',
+            'j',
+            'k',
+            'l',
+            'm',
+            'n',
+            'o',
+            'p',
+            'q',
+            'r',
+            's',
+            't',
+            'u',
+            'v',
+            'w',
+            'x',
+            'y',
+            'z'
+        )
 
         paragraph.toLowerCase().forEach { c ->
 
@@ -585,7 +614,106 @@ class LeetCode {
      * 292
      */
     fun canWinNim(n: Int): Boolean {
-        
+
         return n % 4 != 0
+    }
+
+    /**
+     * 263
+     */
+    fun isUgly(num: Int): Boolean {
+
+        return when {
+            num == 1 -> true
+            num % 2 == 0 -> isUgly(num / 2)
+            num % 3 == 0 -> isUgly(num / 3)
+            num % 5 == 0 -> isUgly(num / 5)
+
+            else -> false
+        }
+    }
+
+    /**
+     * 970
+     */
+    fun powerfulIntegers(x: Int, y: Int, bound: Int): List<Int> {
+
+        val answerList = mutableListOf<Int>()
+
+        val big: Int
+        val small: Int
+
+        if (x > y) {
+
+            big = x
+            small = y
+        } else {
+            big = y
+            small = x
+        }
+
+        val biggestTime = if (bound != 1 && big != 1) {
+            powerNumberMaxUnderBigNumber(bound, big, 0)
+        } else {
+            1
+        }
+
+        for (i in 2..bound) {
+
+            loop@ for (j in 0..biggestTime) {
+
+                if (isPower(i - power(big, j), small)) {
+
+                    answerList.add(i)
+                    break@loop
+                }
+            }
+        }
+
+        return answerList
+    }
+
+    fun power(num: Int, powerNumber: Int): Int {
+
+        if (powerNumber == 0) return 1
+        var answer = 1
+        for (i in 1..powerNumber) {
+
+            answer *= num
+        }
+
+        return answer
+    }
+
+    fun powerNumberMaxUnderBigNumber(bigNumber: Int, smallNumber: Int, powerNumber: Int): Int {
+
+        return if (bigNumber < smallNumber) {
+
+            powerNumber
+        } else {
+
+            powerNumberMaxUnderBigNumber(bigNumber / smallNumber, smallNumber, powerNumber + 1)
+        }
+    }
+
+    fun isPower(bigNumber: Int, smallNumber: Int): Boolean {
+
+        when {
+
+            (smallNumber == 1) -> return bigNumber == 1
+            (bigNumber < 1) -> return false
+            (bigNumber == 1) -> return true
+
+            else -> {
+
+                return if (bigNumber % smallNumber != 0) {
+
+                    false
+                } else {
+                    isPower(bigNumber / smallNumber, smallNumber)
+                }
+
+            }
+        }
     }
 }

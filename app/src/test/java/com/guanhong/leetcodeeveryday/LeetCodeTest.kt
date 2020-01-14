@@ -145,18 +145,68 @@ class LeetCodeTest {
     }
 
     /**
-     * 263
+     * 970
      */
-    fun isUgly(num: Int): Boolean {
+    @Test
+    fun testPowerNumber() {
 
-        return when {
-            num == 1 -> true
-            num % 2 == 0 -> isUgly(num / 2)
-            num % 3 == 0 -> isUgly(num / 3)
-            num % 5 == 0 -> isUgly(num / 5)
+        val actual = leetCode.powerNumberMaxUnderBigNumber(27, 3, 0)
+        val expected = 3
 
-            else -> false
-        }
+        Assert.assertEquals(expected, actual)
     }
 
+    @Test
+    fun testIsPower() {
+
+        val actual = leetCode.isPower(5, 1)
+        val expected = false
+
+        Assert.assertEquals(expected, actual)
+    }
+
+    @Test
+    fun testPower() {
+
+        val actual = leetCode.power(1, 1)
+        val expected = 9
+
+        Assert.assertEquals(expected, actual)
+    }
+
+    @Test
+    fun testPowerfulIntegers1() {
+
+        val actual = leetCode.powerfulIntegers(2, 3, 10).toIntArray()
+        val expected = intArrayOf(2, 3, 4, 5, 7, 9, 10)
+
+        Assert.assertArrayEquals(expected, actual)
+    }
+
+    @Test
+    fun testPowerfulIntegers2() {
+
+        val actual = leetCode.powerfulIntegers(1, 1, 1).toIntArray()
+        val expected = intArrayOf()
+
+        Assert.assertArrayEquals(expected, actual)
+    }
+
+    @Test
+    fun testPowerfulIntegers3() {
+
+        val actual = leetCode.powerfulIntegers(1, 1, 2).toIntArray()
+        val expected = intArrayOf(2)
+
+        Assert.assertArrayEquals(expected, actual)
+    }
+
+    @Test
+    fun testPowerfulIntegers4() {
+
+        val actual = leetCode.powerfulIntegers(3, 5, 15).toIntArray()
+        val expected = intArrayOf(2, 4, 6, 8, 10, 14)
+
+        Assert.assertArrayEquals(expected, actual)
+    }
 }
