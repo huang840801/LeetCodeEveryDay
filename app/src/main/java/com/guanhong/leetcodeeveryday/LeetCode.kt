@@ -535,7 +535,7 @@ class LeetCode {
 
         mutableMap.forEach {
 
-            if (it.value> answerValue) {
+            if (it.value > answerValue) {
 
                 answerValue = it.value
                 answer = it.key
@@ -581,4 +581,11 @@ class LeetCode {
 
     fun min(num1: Int, num2: Int) = if (num1 > num2) num2 else num1
 
+    /**
+     * 292
+     */
+    fun canWinNim(n: Int): Boolean {
+        
+        return n % 4 != 0
+    }
 }
