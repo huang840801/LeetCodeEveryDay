@@ -1,6 +1,7 @@
 package com.guanhong.leetcodeeveryday
 
-import org.junit.Assert
+import org.junit.Assert.assertArrayEquals
+import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 
@@ -21,10 +22,10 @@ class LeetCodeTest {
     @Test
     fun test() {
 
-        val expected = 4
-        val actual = leetCode.test()
-
-        Assert.assertEquals(expected, actual)
+//        val expected = 4
+//        val actual = leetCode.test()
+//
+//        assertEquals(expected, actual)
     }
 
     /**
@@ -33,10 +34,10 @@ class LeetCodeTest {
     @Test
     fun testFindUnsortedSubarray() {
 
-        val actual = leetCode.findUnsortedSubarray(intArrayOf(1, 2, 3, 4))
-        val expected = 4
+        val actual = leetCode.findUnsortedSubarray(intArrayOf(1, 2, 1, 3, 4))
+        val expected = 2
 
-        Assert.assertEquals(expected, actual)
+        assertEquals(expected, actual)
     }
 
     /**
@@ -48,7 +49,7 @@ class LeetCodeTest {
         val expected = leetCode.findComplement(5)
         val actual = 2
 
-        Assert.assertEquals(expected, actual)
+        assertEquals(expected, actual)
     }
 
     @Test
@@ -57,7 +58,7 @@ class LeetCodeTest {
         val expected = leetCode.binaryTransToDecimal("1000")
         val actual = 8
 
-        Assert.assertEquals(expected, actual)
+        assertEquals(expected, actual)
     }
 
     @Test
@@ -66,7 +67,7 @@ class LeetCodeTest {
         val actual = leetCode.decimalTransToBinary(5)
         val expected = "101"
 
-        Assert.assertEquals(expected, actual)
+        assertEquals(expected, actual)
     }
 
     @Test
@@ -75,7 +76,7 @@ class LeetCodeTest {
         val actual = leetCode.calculateRoot(2, 2)
         val expected = 4
 
-        Assert.assertEquals(expected, actual)
+        assertEquals(expected, actual)
     }
 
     /**
@@ -87,7 +88,7 @@ class LeetCodeTest {
         val actual = leetCode.thirdMax(intArrayOf())
         val expected = 0
 
-        Assert.assertEquals(expected, actual)
+        assertEquals(expected, actual)
     }
 
     @Test
@@ -96,7 +97,7 @@ class LeetCodeTest {
         val actual = leetCode.recursiveThirdMax(intArrayOf(4, 5, 7, 2, 1), 0)
         val expected = 4
 
-        Assert.assertEquals(expected, actual)
+        assertEquals(expected, actual)
     }
 
     @Test
@@ -105,7 +106,7 @@ class LeetCodeTest {
         val actual = leetCode.removeDuplicateElement(intArrayOf(2, 9, 6))
         val expected = intArrayOf(2, 9, 6)
 
-        Assert.assertArrayEquals(expected, actual)
+        assertArrayEquals(expected, actual)
     }
 
     /**
@@ -117,7 +118,7 @@ class LeetCodeTest {
         val actual = leetCode.selfDividingNumbers(1, 1)
         val expected = listOf(1)
 
-        Assert.assertArrayEquals(expected.toIntArray(), actual.toIntArray())
+        assertArrayEquals(expected.toIntArray(), actual.toIntArray())
     }
 
     /**
@@ -129,7 +130,7 @@ class LeetCodeTest {
         val actual = leetCode.sortedSquares(intArrayOf(-5))
         val expected = intArrayOf(25)
 
-        Assert.assertArrayEquals(expected, actual)
+        assertArrayEquals(expected, actual)
     }
 
     /**
@@ -141,7 +142,7 @@ class LeetCodeTest {
         val actual = leetCode.transpose(arrayOf(intArrayOf(1, 2, 3), intArrayOf(4, 5, 6)))
         val expected = arrayOf(intArrayOf(1, 4), intArrayOf(2, 5), intArrayOf(3, 6))
 
-        Assert.assertArrayEquals(expected, actual)
+        assertArrayEquals(expected, actual)
     }
 
     /**
@@ -153,7 +154,7 @@ class LeetCodeTest {
         val actual = leetCode.powerNumberMaxUnderBigNumber(27, 3, 0)
         val expected = 3
 
-        Assert.assertEquals(expected, actual)
+        assertEquals(expected, actual)
     }
 
     @Test
@@ -162,16 +163,16 @@ class LeetCodeTest {
         val actual = leetCode.isPower(5, 1)
         val expected = false
 
-        Assert.assertEquals(expected, actual)
+        assertEquals(expected, actual)
     }
 
     @Test
     fun testPower() {
 
-        val actual = leetCode.power(1, 1)
-        val expected = 9
+        val actual = leetCode.power(4, 4)
+        val expected = 256
 
-        Assert.assertEquals(expected, actual)
+        assertEquals(expected, actual)
     }
 
     @Test
@@ -180,7 +181,7 @@ class LeetCodeTest {
         val actual = leetCode.powerfulIntegers(2, 3, 10).toIntArray()
         val expected = intArrayOf(2, 3, 4, 5, 7, 9, 10)
 
-        Assert.assertArrayEquals(expected, actual)
+        assertArrayEquals(expected, actual)
     }
 
     @Test
@@ -189,7 +190,7 @@ class LeetCodeTest {
         val actual = leetCode.powerfulIntegers(1, 1, 1).toIntArray()
         val expected = intArrayOf()
 
-        Assert.assertArrayEquals(expected, actual)
+        assertArrayEquals(expected, actual)
     }
 
     @Test
@@ -198,7 +199,7 @@ class LeetCodeTest {
         val actual = leetCode.powerfulIntegers(1, 1, 2).toIntArray()
         val expected = intArrayOf(2)
 
-        Assert.assertArrayEquals(expected, actual)
+        assertArrayEquals(expected, actual)
     }
 
     @Test
@@ -207,6 +208,6 @@ class LeetCodeTest {
         val actual = leetCode.powerfulIntegers(3, 5, 15).toIntArray()
         val expected = intArrayOf(2, 4, 6, 8, 10, 14)
 
-        Assert.assertArrayEquals(expected, actual)
+        assertArrayEquals(expected, actual)
     }
 }

@@ -7,7 +7,7 @@ class LeetCode {
     /**
      * test result
      */
-    fun test(): Int {
+    fun test() : Int {
 
         val magazine = "q"
 
@@ -23,7 +23,7 @@ class LeetCode {
     /**
      * 581
      */
-    fun findUnsortedSubarray(nums: IntArray): Int {
+    fun findUnsortedSubarray(nums : IntArray) : Int {
 
         if (nums.count() == 0) return 0
         if (nums.count() == 1) return 0
@@ -72,7 +72,7 @@ class LeetCode {
     /**
      * 476
      */
-    fun findComplement(num: Int): Int {
+    fun findComplement(num : Int) : Int {
 
         val binary = decimalTransToBinary(num)
 
@@ -97,7 +97,7 @@ class LeetCode {
         return binaryTransToDecimal(binaryReverse)
     }
 
-    fun decimalTransToBinary(num: Int): String {
+    fun decimalTransToBinary(num : Int) : String {
 
         var temp = num
         var answer = ""
@@ -112,7 +112,7 @@ class LeetCode {
         return answer
     }
 
-    fun binaryTransToDecimal(num: String): Int {
+    fun binaryTransToDecimal(num : String) : Int {
 
         var answer = 0
 
@@ -124,7 +124,7 @@ class LeetCode {
         return answer
     }
 
-    fun calculateRoot(num: Int, rootNum: Int): Int {
+    fun calculateRoot(num : Int, rootNum : Int) : Int {
 
         var answer = 1
 
@@ -139,7 +139,7 @@ class LeetCode {
     /**
      * 414
      */
-    fun thirdMax(nums: IntArray): Int {
+    fun thirdMax(nums : IntArray) : Int {
 
         if (nums.count() == 0) return 0
         val removeDuplicateElementArray = removeDuplicateElement(nums)
@@ -148,7 +148,7 @@ class LeetCode {
         return recursiveThirdMax(removeDuplicateElementArray, 0)
     }
 
-    fun recursiveThirdMax(nums: IntArray, recursiveTime: Int): Int {
+    fun recursiveThirdMax(nums : IntArray, recursiveTime : Int) : Int {
 
         if (recursiveTime == 2) return nums.max()!!
 
@@ -165,7 +165,7 @@ class LeetCode {
         return recursiveThirdMax(mutableListOf.toIntArray(), recursiveTime + 1)
     }
 
-    fun removeDuplicateElement(nums: IntArray): IntArray {
+    fun removeDuplicateElement(nums : IntArray) : IntArray {
 
         val mutableMap = mutableMapOf<Int, Int>()
 
@@ -188,7 +188,7 @@ class LeetCode {
     /**
      * 728
      */
-    fun selfDividingNumbers(left: Int, right: Int): List<Int> {
+    fun selfDividingNumbers(left : Int, right : Int) : List<Int> {
 
         val answerList = mutableListOf<Int>()
 
@@ -229,7 +229,7 @@ class LeetCode {
     /**
      * 908
      */
-    fun smallestRangeI(A: IntArray, K: Int): Int {
+    fun smallestRangeI(A : IntArray, K : Int) : Int {
 
         if (A.count() == 0) return 0
 
@@ -250,7 +250,7 @@ class LeetCode {
     /**
      * 645
      */
-    fun findErrorNums(nums: IntArray): IntArray {
+    fun findErrorNums(nums : IntArray) : IntArray {
 
         var missnumber = 0
         var duplicateNumber = 0
@@ -281,7 +281,7 @@ class LeetCode {
     /**
      * 922
      */
-    fun sortArrayByParityII(A: IntArray): IntArray {
+    fun sortArrayByParityII(A : IntArray) : IntArray {
 
         val answerIntArray = IntArray(A.count())
 
@@ -294,7 +294,6 @@ class LeetCode {
 
                 answerIntArray[evenIndex] = element
                 evenIndex += 2
-
             } else {
 
                 answerIntArray[oddIndex] = element
@@ -308,7 +307,7 @@ class LeetCode {
     /**
      * 1287
      */
-    fun findSpecialInteger(arr: IntArray): Int {
+    fun findSpecialInteger(arr : IntArray) : Int {
 
         if (arr.count() == 1) return arr[0]
 
@@ -328,7 +327,7 @@ class LeetCode {
     /**
      * 1221
      */
-    fun balancedStringSplit(s: String): Int {
+    fun balancedStringSplit(s : String) : Int {
 
         var answer = 0
         var numberOfL = 0
@@ -339,7 +338,6 @@ class LeetCode {
             if (element == 'R') {
 
                 numberOfR++
-
             } else {
 
                 numberOfL++
@@ -360,7 +358,7 @@ class LeetCode {
     /**
      * 977
      */
-    fun sortedSquares(A: IntArray): IntArray {
+    fun sortedSquares(A : IntArray) : IntArray {
 
         val answerIntArray = IntArray(A.count())
 
@@ -382,7 +380,7 @@ class LeetCode {
     /**
      * 867
      */
-    fun transpose(A: Array<IntArray>): Array<IntArray> {
+    fun transpose(A : Array<IntArray>) : Array<IntArray> {
 
         val answerArray = Array(A[0].count()) { IntArray(A.count()) }
 
@@ -400,7 +398,7 @@ class LeetCode {
     /**
      * 766
      */
-    fun isToeplitzMatrix(matrix: Array<IntArray>): Boolean {
+    fun isToeplitzMatrix(matrix : Array<IntArray>) : Boolean {
 
         val mutableMap = mutableMapOf<Int, Int>()
 
@@ -434,7 +432,7 @@ class LeetCode {
     /**
      * 383
      */
-    fun canConstruct(ransomNote: String, magazine: String): Boolean {
+    fun canConstruct(ransomNote : String, magazine : String) : Boolean {
 
         val magazineArray = arrayOfNulls<String>(magazine.count())
 
@@ -454,7 +452,6 @@ class LeetCode {
                     magazineArray.indexOf(ransomNoteElementInMagazineArray)
 
                 magazineArray[indexOfRansomNoteElementInMagazineArray] = " "
-
             } else {
                 return false
             }
@@ -466,7 +463,7 @@ class LeetCode {
     /**
      * 268
      */
-    fun missingNumber(nums: IntArray): Int {
+    fun missingNumber(nums : IntArray) : Int {
 
         val mutableMap = mutableMapOf<Int, Int>()
 
@@ -489,7 +486,7 @@ class LeetCode {
     /**
      * 819
      */
-    fun mostCommonWord(paragraph: String, banned: Array<String>): String {
+    fun mostCommonWord(paragraph : String, banned : Array<String>) : String {
 
         var s = ""
 
@@ -577,12 +574,12 @@ class LeetCode {
     /**
      * 1266
      */
-    fun minTimeToVisitAllPoints(points: Array<IntArray>): Int {
+    fun minTimeToVisitAllPoints(points : Array<IntArray>) : Int {
 
         if (points.count() == 1) return 0
 
         var answer = 0
-        var nextPoint: IntArray
+        var nextPoint : IntArray
 
         points.forEachIndexed { index, point ->
 
@@ -606,14 +603,14 @@ class LeetCode {
         return answer
     }
 
-    fun abs(num: Int) = if (num > 0) num else -num
+    fun abs(num : Int) = if (num > 0) num else -num
 
-    fun min(num1: Int, num2: Int) = if (num1 > num2) num2 else num1
+    fun min(num1 : Int, num2 : Int) = if (num1 > num2) num2 else num1
 
     /**
      * 292
      */
-    fun canWinNim(n: Int): Boolean {
+    fun canWinNim(n : Int) : Boolean {
 
         return n % 4 != 0
     }
@@ -621,7 +618,7 @@ class LeetCode {
     /**
      * 263
      */
-    fun isUgly(num: Int): Boolean {
+    fun isUgly(num : Int) : Boolean {
 
         return when {
             num == 1 -> true
@@ -636,12 +633,12 @@ class LeetCode {
     /**
      * 970
      */
-    fun powerfulIntegers(x: Int, y: Int, bound: Int): List<Int> {
+    fun powerfulIntegers(x : Int, y : Int, bound : Int) : List<Int> {
 
         val answerList = mutableListOf<Int>()
 
-        val big: Int
-        val small: Int
+        val big : Int
+        val small : Int
 
         if (x > y) {
 
@@ -673,7 +670,7 @@ class LeetCode {
         return answerList
     }
 
-    fun power(num: Int, powerNumber: Int): Int {
+    fun power(num : Int, powerNumber : Int) : Int {
 
         if (powerNumber == 0) return 1
         var answer = 1
@@ -685,7 +682,7 @@ class LeetCode {
         return answer
     }
 
-    fun powerNumberMaxUnderBigNumber(bigNumber: Int, smallNumber: Int, powerNumber: Int): Int {
+    fun powerNumberMaxUnderBigNumber(bigNumber : Int, smallNumber : Int, powerNumber : Int) : Int {
 
         return if (bigNumber < smallNumber) {
 
@@ -696,7 +693,7 @@ class LeetCode {
         }
     }
 
-    fun isPower(bigNumber: Int, smallNumber: Int): Boolean {
+    fun isPower(bigNumber : Int, smallNumber : Int) : Boolean {
 
         when {
 
@@ -712,7 +709,6 @@ class LeetCode {
                 } else {
                     isPower(bigNumber / smallNumber, smallNumber)
                 }
-
             }
         }
     }
