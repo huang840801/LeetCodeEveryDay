@@ -1,9 +1,5 @@
 package com.guanhong.leetcodeeveryday
 
-class ListNode(var `val` : Int) {
-    var next : ListNode? = null
-}
-
 class LeetCode21 {
 
     fun mergeTwoLists(l1 : ListNode?, l2 : ListNode?) : ListNode? {
