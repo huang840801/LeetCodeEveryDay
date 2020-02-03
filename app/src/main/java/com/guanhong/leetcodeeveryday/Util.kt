@@ -7,7 +7,7 @@ class Util {
         val INSTANCE = Util()
     }
 
-    companion object{
+    companion object {
 
         val instance by lazy { Holder.INSTANCE }
     }
