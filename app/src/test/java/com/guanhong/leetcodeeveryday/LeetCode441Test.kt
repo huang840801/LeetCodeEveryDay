@@ -19,6 +19,11 @@ class LeetCode441Test {
     @Test
     fun testArrangeCoins1() {
 
+        val aa = 20
+        val bb = 8
+
+        println(" hhh " + (3.toFloat() * aa / bb))
+
         val actual = leetCode.arrangeCoins(6)
         val expected = 3
 
