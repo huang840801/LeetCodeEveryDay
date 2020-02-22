@@ -31,4 +31,24 @@ class Util {
 
         return answer
     }
+
+    fun getMin(intArray : IntArray) : Int {
+
+        if (intArray.count() == 0) {
+
+            return -99
+        }
+
+        var answer = intArray[0]
+
+        for (num in intArray) {
+
+            if (num < answer) {
+
+                answer = num
+            }
+        }
+
+        return answer
+    }
 }
