@@ -29,18 +29,6 @@ class LeetCodeTest {
     }
 
     /**
-     * 581
-     */
-    @Test
-    fun testFindUnsortedSubarray() {
-
-        val actual = leetCode.findUnsortedSubarray(intArrayOf(1, 2, 1, 3, 4))
-        val expected = 2
-
-        assertEquals(expected, actual)
-    }
-
-    /**
      * 476
      */
     @Test

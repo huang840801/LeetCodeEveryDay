@@ -358,7 +358,7 @@ class LeetCode {
             mutableMap[index] = i
         }
 
-        var nowIntArrayIndex = 0
+        var nowIntArrayIndex : Int
 
         matrix.forEachIndexed { index, intArray ->
 
