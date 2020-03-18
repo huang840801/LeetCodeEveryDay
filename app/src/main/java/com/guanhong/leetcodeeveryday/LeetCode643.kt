@@ -21,9 +21,6 @@ class LeetCode643 {
             answer = max(answer, maxSum)
         }
 
-        println(" ans " + answer)
-
-
         return (answer.toDouble() / k.toDouble())
     }
 }
