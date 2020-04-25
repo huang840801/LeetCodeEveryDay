@@ -4,13 +4,13 @@ class LeetCode961 {
 
     fun repeatedNTimes(A : IntArray) : Int {
 
-        val mutableMap = mutableMapOf<Int, Int>()
+        val array = IntArray(10000) { 0 }
 
         A.forEach {
 
-            if (mutableMap[it] == null) {
+            if (array[it] == 0) {
 
-                mutableMap[it] = 1
+                array[it] = 1
             } else {
 
                 return it
