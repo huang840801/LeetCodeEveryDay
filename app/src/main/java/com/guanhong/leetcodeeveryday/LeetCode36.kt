@@ -24,62 +24,11 @@ class LeetCode36 {
 
                 columnMap[columnIndex]!![rowIndex] = char
 
-                when (rowIndex) {
+                val indexOfSubBox = rowIndex - (rowIndex % 3) + (columnIndex - columnIndex % 3) / 3
 
-                    in 0..2 -> {
+                val index = (rowIndex % 3) * 3 + columnIndex % 3
 
-                        when (columnIndex) {
-                            in 0..2 -> {
-
-                                subBoxMap[0]!![(rowIndex % 3) * 3 + columnIndex % 3] = char
-                            }
-
-                            in 3..5 -> {
-
-                                subBoxMap[1]!![(rowIndex % 3) * 3 + columnIndex % 3] = char
-                            }
-                            in 6..8 -> {
-
-                                subBoxMap[2]!![(rowIndex % 3) * 3 + columnIndex % 3] = char
-                            }
-                        }
-                    }
-                    in 3..5 -> {
-                        when (columnIndex) {
-                            in 0..2 -> {
-
-                                subBoxMap[3]!![(rowIndex % 3) * 3 + columnIndex % 3] = char
-                            }
-
-                            in 3..5 -> {
-
-                                subBoxMap[4]!![(rowIndex % 3) * 3 + columnIndex % 3] = char
-                            }
-                            in 6..8 -> {
-
-                                subBoxMap[5]!![(rowIndex % 3) * 3 + columnIndex % 3] = char
-                            }
-                        }
-                    }
-                    in 6..8 -> {
-
-                        when (columnIndex) {
-                            in 0..2 -> {
-
-                                subBoxMap[6]!![(rowIndex % 3) * 3 + columnIndex % 3] = char
-                            }
-
-                            in 3..5 -> {
-
-                                subBoxMap[7]!![(rowIndex % 3) * 3 + columnIndex % 3] = char
-                            }
-                            in 6..8 -> {
-
-                                subBoxMap[8]!![(rowIndex % 3) * 3 + columnIndex % 3] = char
-                            }
-                        }
-                    }
-                }
+                subBoxMap[indexOfSubBox]!![index] = char
             }
         }
 
