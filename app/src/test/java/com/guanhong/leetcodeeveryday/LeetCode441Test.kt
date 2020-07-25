@@ -1,10 +1,10 @@
 package com.guanhong.leetcodeeveryday
 
+import com.guanhong.leetcodeeveryday.easy.LeetCode441
 import org.junit.Before
 
 import org.junit.Assert.*
 import org.junit.Test
-import kotlin.system.measureTimeMillis
 
 class LeetCode441Test {
 

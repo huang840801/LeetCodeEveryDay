@@ -1,7 +1,7 @@
 package com.guanhong.leetcodeeveryday
 
+import com.guanhong.leetcodeeveryday.easy.LeetCode345
 import org.hamcrest.CoreMatchers.`is`
-import org.hamcrest.Matcher
 import org.hamcrest.core.IsEqual.equalTo
 import org.junit.Before
 

@@ -1,5 +1,6 @@
 package com.guanhong.leetcodeeveryday
 
+import com.guanhong.leetcodeeveryday.easy.LeetCode1252
 import org.junit.Before
 
 import org.junit.Assert.*

@@ -1,7 +1,5 @@
 package com.guanhong.leetcodeeveryday
 
-import android.util.Log
-
 class LeetCode {
 
     /**
