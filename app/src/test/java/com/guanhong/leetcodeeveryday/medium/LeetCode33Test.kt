@@ -1,4 +1,4 @@
-package com.guanhong.leetcodeeveryday
+package com.guanhong.leetcodeeveryday.medium
 
 import com.guanhong.leetcodeeveryday.medium.LeetCode33
 import org.junit.Before
