@@ -6,7 +6,7 @@ import org.junit.Before
 import org.junit.Assert.*
 import org.junit.Test
 
-class LeetCode46Test {
+class LeetCode168Test {
 
     private lateinit var leetCode168 : LeetCode168
 
