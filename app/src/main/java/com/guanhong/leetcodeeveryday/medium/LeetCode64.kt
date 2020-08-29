@@ -1,33 +1,34 @@
 package com.guanhong.leetcodeeveryday.medium
 
-class LeetCode64 {
+import kotlin.math.min
 
-    private val pathList = mutableListOf<Int>()
+class LeetCode64 {
 
     fun minPathSum(grid : Array<IntArray>) : Int {
 
         if (grid.isEmpty()) return 0
 
-        helper(0, 0, 0, grid)
+        val rowCount = grid.count()
+        val columnCount = grid[0].count()
 
-        return pathList.min() ?: 0
-    }
+        for (row in 1..grid.lastIndex) {
 
-    private fun helper(pathSum : Int, row : Int, column : Int, grid : Array<IntArray>) {
+            grid[row][0] += grid[row - 1][0]
+        }
+        for (column in 1..grid[0].lastIndex) {
 
-        if (row == grid.lastIndex && column == grid[0].lastIndex) {
+            grid[0][column] += grid[0][column - 1]
+        }
+        for (row in 1..grid.lastIndex) {
 
-            pathList.add(pathSum + grid[row][column])
-        } else {
+            for (column in 1..grid[0].lastIndex) {
 
-            if (row < grid.lastIndex) {
+                val minPath = min(grid[row - 1][column], grid[row][column - 1])
 
-                helper(pathSum + grid[row][column], row + 1, column, grid)
-            }
-            if (column < grid[0].lastIndex) {
-
-                helper(pathSum + grid[row][column], row, column + 1, grid)
+                grid[row][column] += minPath
             }
         }
+
+        return grid[rowCount - 1][columnCount - 1]
     }
 }
